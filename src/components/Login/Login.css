@@ -1,0 +1,33 @@
+.login {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.login > button {
+    width: 300px;
+    background-color: var(--twitter-color);
+    color: #eff2f5;
+    font-weight: 600;
+}
+
+.login > button:hover {
+    background-color: white;
+    color: var(--twitter-color);
+}
+
+.login > div > img:first-child {
+    object-fit: contain;
+    height: 150px;
+    margin: 40px 0;
+}
+
+.login > div > img:last-child {
+    object-fit: contain;
+    height: 50px;
+}
+
+.login > div {
+    display: flex;
+    flex-direction: column;
+}

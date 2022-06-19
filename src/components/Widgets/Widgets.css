@@ -1,0 +1,137 @@
+.widgets {
+    flex: 0.3;
+    position: relative;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+
+.widgets__input {
+    display: flex;
+    align-items: center;
+    background-color: var(--twitter-background);
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.widgets__input > input {
+    border: none;
+    background-color: var(--twitter-background);
+}
+
+.widgets__searchIcon {
+    color: gray;
+}
+
+.widgets__widgetContainer {
+    background-color: #f5f8fa;
+    border-radius: 20px;
+}
+
+.widgets__news {
+    overflow: scroll;
+    transform: scale(0.9);
+    max-height: 610px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.widgets__news::-webkit-scrollbar {
+    display: none;
+}
+
+.widgets__news > h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.widgets__follow {
+    width: 100%;
+    border: 1px solid lightgray;
+    color: #15181c;
+    padding-top: 15px;
+    border-radius: 15px;
+    transform: scale(0.9);
+}
+
+.widgets__follow > h4 {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 16px;
+}
+
+.following__item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 200ms ease-out;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.widgets__followUserImage {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.widgets__followUserText {
+    margin-left: 16px;
+}
+
+.widgets__followUserText > h4 {
+    font-weight: bold;
+    transition: hover .3s ease-out;
+}
+
+.widgets__followUserText > h4:hover {
+    text-decoration: underline;
+}
+
+.widgets__followUserText > h5 {
+    font-size: 15px;
+    color: rgb(107 114 128);
+}
+
+.following__item > button {
+    padding: 8px 16px;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    color: var(--twitter-background);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 200ms ease-out;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--twitter-color);
+
+}
+
+.following__item > button:hover {
+    color: var(--twitter-color);
+    background-color: var(--twitter-background);
+}
+
+@media (max-width: 1024px) {
+    .widgets {
+        flex: 0.4;
+    }
+}
+
+@media (max-width: 786px) {
+    .widgets {
+        flex: 0.5;
+    }
+}
+@media (max-width: 640px) {
+    .widgets {
+        display: none;
+    }
+}

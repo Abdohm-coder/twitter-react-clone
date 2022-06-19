@@ -1,0 +1,27 @@
+.comment {
+    display: flex;
+    margin: 5px 0;
+    align-items: center;
+}
+
+.comment__avatar {
+    margin: 20px;
+    margin-left: 0;
+}
+
+.comment__text {
+    padding: 5px;
+    border-radius: 12px;
+    background-color: rgba(213, 220, 226, 0.746);
+    height: fit-content;
+    /* background-color:  var(--twitter-color);
+    color: var(--twitter-background); */
+}
+
+.comment__username {
+    display: flex;
+}
+
+.comment__timestamp {
+    font-size: 12px;
+}

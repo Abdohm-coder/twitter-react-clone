@@ -1,0 +1,140 @@
+.tweetBox {
+    padding-bottom: 10px;
+    border-bottom: 8px solid var(--twitter-background);
+    padding-right: 10px;
+    border: 1px solid lightgray;
+}
+
+.tweetBox > form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ------------------------- tweetBox__input  ----------------------- */
+
+.tweetBox__input {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.tweetBox__input > input {
+    flex: 1;
+    margin-left: 20px;
+    font-size: 20px;
+    border: none;
+}
+
+.tweetBox__input > label {
+    cursor: pointer;
+}
+
+label svg {
+    font-size: 14px;
+}
+
+.tweetBox__imageName {
+    font-size: 10px;
+    color: gray;
+}
+
+.tweetBox__tweetButton {
+    background-color: var(--twitter-color) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 700 !important;
+    text-transform: inherit !important;
+    border-radius: 30px !important;
+    width: 80px;
+    height: 40px !important;
+    margin-top: 20px !important;
+    margin-left: auto !important;
+}
+
+#file {
+    display: none;
+    cursor: pointer;
+}
+
+/* ------------------------- progressUpload  ----------------------- */
+
+.progressUpload {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.progressUpload > progress {
+    width: 90%;
+    height: 8px;
+    margin-left: auto;
+}
+
+/* ------------------------- tweetBox__displayImage  ----------------------- */
+
+.tweetBox__displayImage {
+    border: 1px solid lightgray;
+    width: 80%;
+    margin-left: auto;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.tweetBox__imageName {
+    text-align: center;
+}
+
+.displayImage__container {
+    display: grid;
+    place-items: end;
+    width: 100%;
+}
+
+.displayImage__item {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    max-width: 100px;
+    overflow: hidden;
+    
+}
+
+.displayImage__item > img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.displayImage__clear{
+    color: #C70000;
+}
+
+/* ------------------------- RESPONSIVE STYLE  ----------------------- */
+
+
+@media (max-width: 532px) {
+
+    .tweetBox {
+        padding-right: 0;
+    }
+
+    .tweetBox__tweetButton {
+        margin-top: 20px !important;
+        margin-left: 20px !important;
+    }
+
+    .tweetBox__input > input {
+        max-width: 200px;
+        font-size: 14px;
+    }
+    
+    .tweetBox__displayImage {
+        margin: 0 auto;
+    }
+    .progressUpload > progress{
+        margin: 0;
+    }
+}
