@@ -1,16 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { StateProvider } from './StateProvider';
-import reducer, { initialState } from './reducer';
+import { StateProvider } from "./StateProvider";
+import reducer, { initialState } from "./reducer";
+import { createRoot } from "react-dom/client";
+import React from "react";
+import App from "./App";
+import "./index.css";
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
     <StateProvider initialState={initialState} reducer={reducer}>
-      <App />
+      <App tab="home" />
     </StateProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
-

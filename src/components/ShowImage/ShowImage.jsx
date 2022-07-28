@@ -1,26 +1,24 @@
-import './ShowImage.css';
-import { RecoilRoot, atom, useRecoilState } from 'recoil';
+import { Fragment, useContext } from "react";
+import { DataContext } from "../../App";
+import "./ShowImage.css";
 
-export default function ShowImage({ showImage, setImage }) {
+export default function ShowImage() {
+  const dataContext = useContext(DataContext);
 
-    const [displayImage, setDisplayImage] = useRecoilState(showImage);
-    const [img, setImg] = useRecoilState(setImage);
+  const desactiveModal = () => {
+    dataContext.setDisplayImage(false);
+    dataContext.setImageSrc("");
+  };
 
-    const desactiveModal = () => {
-        setDisplayImage(false);
-        setImg("");
-    }
-
-    return (
-        <>
-        {
-            displayImage && 
-                <div className='displayImage' onClick={desactiveModal}>
-                    <div className="displayImage__container">
-                        <img src={img} alt="" />
-                    </div>
-                </div>
-        }
-        </>
-    );
+  return (
+    <Fragment>
+      {dataContext.displayImage && (
+        <div className="displayImage" onClick={desactiveModal}>
+          <div className="displayImage__container">
+            <img src={dataContext.img} alt={dataContext.img} />
+          </div>
+        </div>
+      )}
+    </Fragment>
+  );
 }

@@ -1,7 +1,7 @@
 {
   "name": "twitter-app",
   "author": "Abdo Hadj Med",
-  "version": "0.1.0",
+  "version": "1.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.3",
@@ -10,8 +10,8 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "firebase": "^8.10.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-flip-move": "^3.0.4",
     "react-scripts": "4.0.3",
     "react-twitter-embed": "^3.0.3",
@@ -25,11 +25,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [

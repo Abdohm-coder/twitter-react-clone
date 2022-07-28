@@ -1,48 +1,35 @@
-import './App.css';
-import Sidebar from './components/Siderbar/Sidebar';
-import Feed from './components/Feed/Feed';
-import Widgets from './components/Widgets/Widgets';
-import { useStateValue } from './StateProvider';
-import Login from './components/Login/Login';
-import { useState, useEffect } from 'react';
-import { RecoilRoot, atom } from 'recoil';
-import ShowImage from './components/ShowImage/ShowImage';
+import Sidebar from "./components/Siderbar/Sidebar";
+import Feed from "./components/Feed/Feed";
+import Widgets from "./components/Widgets/Widgets";
+import Login from "./components/Login/Login";
+import ShowImage from "./components/ShowImage/ShowImage";
+import { useStateValue } from "./StateProvider";
+import { useState, createContext } from "react";
+import "./App.css";
+
+export const DataContext = createContext();
 
 export default function App() {
+  const [{ user }] = useStateValue();
 
-  const [{ user }, dispatch] = useStateValue();
-
-  const size = atom({
-    key: 'size',
-    default: window.innerWidth,
-  })
-
-  const showImage = atom({
-    key: 'showImage',
-    default: false
-  });
-  
-  const setImage = atom({
-    key: 'setImage',
-    default: ''
-  })
+  const [displayImage, setDisplayImage] = useState(false);
+  const [imageSrc, setImageSrc] = useState("");
 
   return (
     <div className="app">
       {!user ? (
         <Login />
       ) : (
-        <RecoilRoot>
-          <ShowImage showImage={showImage} setImage={setImage} />
+        <DataContext.Provider
+          value={{ displayImage, imageSrc, setDisplayImage, setImageSrc }}>
+          <ShowImage />
           <div className="app__body">
-            <Sidebar size={size} />
-            <Feed showImage={showImage} setImage={setImage} size={size} />
-            <Widgets/>
+            <Sidebar />
+            <Feed />
+            <Widgets />
           </div>
-        </RecoilRoot>
+        </DataContext.Provider>
       )}
-
     </div>
   );
 }
-
